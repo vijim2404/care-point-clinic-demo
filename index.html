@@ -3,376 +3,1092 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CarePoint Multispeciality Clinic - Sample healthcare website portfolio.">
-<title>CarePoint Multispeciality Clinic</title>
 
+<title>CarePoint Multispeciality Clinic | Healthcare Website Demo</title>
+
+<meta name="description" content="CarePoint Multispeciality Clinic sample website, created as a healthcare web design portfolio project.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --blue:#1769aa;
-  --navy:#123461;
-  --light:#edf6ff;
-  --text:#233750;
-  --muted:#687b91;
-  --white:#ffffff;
+  --blue: #1769aa;
+  --navy: #102f58;
+  --light-blue: #eaf4ff;
+  --text: #263a52;
+  --muted: #718198;
+  --white: #ffffff;
+  --green: #16836b;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:'DM Sans',sans-serif;
-  color:var(--text);
-  line-height:1.65;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-a{text-decoration:none;color:inherit}
-.container{width:min(1120px,92%);margin:auto}
-.demo{
-  background:#fff1c9;color:#72541c;text-align:center;
-  padding:9px;font-size:11px;font-weight:700;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
-header{
-  background:white;position:sticky;top:0;z-index:10;
-  border-bottom:1px solid #e4edf5;
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  line-height: 1.65;
 }
-nav{
-  min-height:78px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
-.logo{font:800 23px Manrope,sans-serif;color:var(--navy)}
-.logo span{color:var(--blue)}
-.links{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:700}
-.btn{
-  display:inline-block;background:var(--blue);color:white;
-  padding:13px 19px;border-radius:9px;font-weight:700;
-  border:0;cursor:pointer;font-size:13px;
+
+button, input, select, textarea {
+  font: inherit;
 }
-.btn:hover{background:var(--navy)}
-.hero{
-  background:linear-gradient(120deg,#f5faff,#dceeff);
-  padding:75px 0;
+
+.container {
+  width: min(1160px, 92%);
+  margin: auto;
 }
-.hero-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:45px;align-items:center;
+
+/* Demo label */
+
+.demo-banner {
+  background: #fff1cb;
+  color: #72541b;
+  padding: 7px 12px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
-.eyebrow{
-  color:var(--blue);font-size:12px;font-weight:800;
-  letter-spacing:2px;text-transform:uppercase;
+
+/* Navigation */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #e6edf5;
 }
-h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.2}
-h1{font-size:clamp(38px,5vw,60px);color:var(--navy);margin:18px 0}
-h1 span{color:var(--blue)}
-p{color:var(--muted)}
-.hero p{font-size:15px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0}
-.btn-light{
-  background:white;color:var(--navy);
-  border:1px solid #d9e6f3;
+
+nav {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
 }
-.hero img{
-  width:100%;height:390px;object-fit:cover;
-  border-radius:25px;box-shadow:0 18px 45px #12346120;
+
+.logo {
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  white-space: nowrap;
 }
-.highlights{background:var(--navy);color:white}
-.highlight-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
+
+.logo-icon {
+  color: var(--blue);
+  margin-right: 5px;
 }
-.highlight{padding:23px;border-right:1px solid #ffffff30}
-.highlight:last-child{border:0}
-.highlight strong{display:block}
-.highlight small{color:#c9def4}
-section{padding:75px 0}
-.section-title{text-align:center;max-width:660px;margin:0 auto 38px}
-.section-title h2{font-size:clamp(28px,4vw,40px);color:var(--navy);margin:12px 0}
-.section-title p{font-size:14px}
-.services{background:white}
-.service-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+
+.logo span {
+  color: var(--blue);
 }
-.card{
-  padding:25px;border:1px solid #e0eaf4;border-radius:16px;
-  transition:.2s;background:white;
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 13px;
+  font-weight: 700;
 }
-.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #12346112}
-.service-icon{
-  width:53px;height:53px;border-radius:14px;
-  background:var(--light);display:grid;place-items:center;
-  font-size:27px;
+
+.nav-links a:not(.button):hover {
+  color: var(--blue);
 }
-.card h3{font-size:18px;color:var(--navy);margin-bottom:8px}
-.card p{font-size:13px}
-.about{background:#f4f9ff}
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:45px;align-items:center;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 9px;
+  background: var(--blue);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .2s;
 }
-.about img{width:100%;height:370px;object-fit:cover;border-radius:20px}
-.about h2{font-size:38px;color:var(--navy)}
-.checks{padding:0;list-style:none}
-.checks li{padding:7px 0;font-weight:600;font-size:14px}
-.checks li:before{content:"✓";color:#13856b;margin-right:10px}
-.doctors{background:white}
-.doctor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.doctor{border:1px solid #e0eaf4;border-radius:16px;overflow:hidden}
-.doctor img{width:100%;height:250px;object-fit:cover;display:block}
-.doctor-info{padding:20px}
-.doctor h3{color:var(--navy);margin:0 0 5px}
-.doctor p{font-size:12px;margin:0}
-.appointment{
-  background:linear-gradient(125deg,#102e57,#1769aa);
-  color:white;
+
+.button:hover {
+  background: var(--navy);
+  transform: translateY(-1px);
 }
-.appointment-grid{
-  display:grid;grid-template-columns:.9fr 1.1fr;
-  gap:45px;align-items:center;
+
+.button-white {
+  background: white;
+  color: var(--navy);
+  border: 1px solid #dce8f5;
 }
-.appointment h2{font-size:40px}
-.appointment-copy p{color:#d6e8fa;font-size:14px}
-.form-card{background:white;color:var(--text);padding:28px;border-radius:18px}
-.form-card h3{color:var(--navy);font-size:24px;margin:0}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field.full{grid-column:1/-1}
-label{font-size:12px;font-weight:700}
-input,select,textarea{
-  width:100%;padding:12px;border:1px solid #dce6f0;
-  border-radius:8px;font:inherit;font-size:13px;
+
+.button-white:hover {
+  background: #edf6ff;
+  color: var(--navy);
 }
-textarea{min-height:80px;resize:vertical}
-.form-card button{width:100%;margin-top:17px}
-.notice{font-size:11px;color:var(--muted)}
-#result{
-  display:none;background:#e6f7ef;padding:12px;
-  border-radius:8px;font-size:12px;margin-top:12px;
+
+/* Full screen homepage hero */
+
+.hero {
+  min-height: calc(100vh - 76px);
+  min-height: calc(100svh - 76px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #dcecff;
+
+  /* Upload your background image as carepoint-team.png */
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(8, 35, 75, .86) 0%,
+      rgba(8, 35, 75, .70) 40%,
+      rgba(8, 35, 75, .20) 100%
+    ),
+    url("./carepoint-team.png");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
-footer{background:#0c2341;color:white;padding:45px 0 20px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer p,footer a{font-size:12px;color:#bed0e4}
-footer h3{font-size:15px}
-.copyright{border-top:1px solid #ffffff25;padding-top:18px;margin-top:25px;font-size:11px;color:#bed0e4}
-@media(max-width:760px){
-  nav{flex-wrap:wrap;padding:15px 0}
-  .links{width:100%;justify-content:space-between;gap:10px;flex-wrap:wrap}
-  .links a{font-size:12px}
-  .hero{padding:48px 0}
-  .hero-grid,.about-grid,.appointment-grid{grid-template-columns:1fr}
-  .hero img{height:300px}
-  section{padding:55px 0}
-  .highlight-grid{grid-template-columns:1fr}
-  .highlight{border-right:0;border-bottom:1px solid #ffffff30}
-  .service-grid,.doctor-grid{grid-template-columns:1fr}
-  .about img{height:290px}
-  .appointment h2,.about h2{font-size:31px}
-  .form-grid{grid-template-columns:1fr}
-  .field.full{grid-column:auto}
-  .footer-grid{grid-template-columns:1fr}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(1160px, 92%);
+  margin: auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.hero-copy {
+  max-width: 650px;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #bce0ff;
+}
+
+.hero h1 {
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(39px, 5.3vw, 68px);
+  line-height: 1.12;
+  margin: 20px 0;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  color: #83cbff;
+}
+
+.hero-description {
+  max-width: 550px;
+  color: #edf5ff;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin: 30px 0;
+}
+
+.hero-note {
+  color: #e2edfa;
+  font-size: 12px;
+}
+
+.hero-note span {
+  margin-right: 7px;
+  color: #a6e5d1;
+}
+
+/* Highlights */
+
+.highlights {
+  background: var(--navy);
+  color: white;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.highlight {
+  padding: 24px;
+  text-align: center;
+  border-right: 1px solid #ffffff25;
+}
+
+.highlight:last-child {
+  border-right: 0;
+}
+
+.highlight strong {
+  display: block;
+  font-size: 15px;
+}
+
+.highlight p {
+  color: #c6d9ee;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* General sections */
+
+section.content-section {
+  padding: 82px 0;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 42px;
+}
+
+.section-heading h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--navy);
+  line-height: 1.25;
+  margin: 12px 0;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Services */
+
+.services {
+  background: white;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  background: white;
+  border: 1px solid #e2ebf5;
+  border-radius: 16px;
+  padding: 27px;
+  transition: .25s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #18385d12;
+}
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 15px;
+  background: var(--light-blue);
+  font-size: 27px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  margin-bottom: 9px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* About */
+
+.about {
+  background: #f2f8ff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-visual {
+  min-height: 370px;
+  border-radius: 22px;
+  padding: 35px;
+  display: flex;
+  align-items: flex-end;
+  background:
+    linear-gradient(0deg, rgba(8,35,75,.78), transparent 80%),
+    url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85")
+    center/cover no-repeat;
+}
+
+.about-visual p {
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.about-copy h2 {
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.25;
+  margin: 13px 0 18px;
+}
+
+.about-copy > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.check-list {
+  list-style: none;
+  margin: 22px 0 28px;
+}
+
+.check-list li {
+  margin: 11px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.check-list li::before {
+  content: "✓";
+  color: var(--green);
+  font-weight: 800;
+  margin-right: 12px;
+}
+
+/* Doctors */
+
+.doctors {
+  background: white;
+}
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.doctor-card {
+  overflow: hidden;
+  border: 1px solid #e2ebf5;
+  border-radius: 17px;
+  background: white;
+}
+
+.doctor-card img {
+  width: 100%;
+  height: 285px;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.doctor-info {
+  padding: 22px;
+}
+
+.doctor-info h3 {
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+}
+
+.doctor-info p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.sample-label {
+  display: inline-block;
+  background: #eaf4ff;
+  color: #1769aa;
+  padding: 5px 9px;
+  border-radius: 6px;
+  margin-top: 12px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Appointment */
+
+.appointment {
+  background: linear-gradient(125deg, #102f58, #1769aa);
+  color: white;
+}
+
+.appointment-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.appointment-copy .eyebrow {
+  color: #bde1ff;
+}
+
+.appointment-copy h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.2;
+  margin: 17px 0;
+}
+
+.appointment-copy > p {
+  color: #d5e7f9;
+  font-size: 14px;
+  margin: 13px 0;
+}
+
+.contact-detail {
+  margin-top: 27px;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff35;
+}
+
+.form-card {
+  background: white;
+  color: var(--text);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px #071e3b30;
+}
+
+.form-card h3 {
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+}
+
+.form-card > p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 7px 0 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dbe5f0;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px #1769aa18;
+}
+
+.field textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+.form-card .button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.form-notice {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 14px;
+}
+
+#form-result {
+  display: none;
+  background: #e7f7ef;
+  color: #126349;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 13px;
+  font-size: 12px;
+}
+
+/* Footer */
+
+footer {
+  background: #0a2241;
+  color: white;
+  padding: 48px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 35px;
+}
+
+.footer-grid h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-grid p,
+.footer-grid a {
+  color: #c4d5e8;
+  font-size: 12px;
+}
+
+.footer-grid p {
+  margin: 8px 0;
+}
+
+.footer-brand p {
+  max-width: 330px;
+  margin-top: 15px;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.copyright {
+  border-top: 1px solid #ffffff25;
+  padding-top: 18px;
+  margin-top: 30px;
+  color: #b7c9df;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 800px) {
+  nav {
+    padding: 14px 0;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .nav-links .button {
+    padding: 10px 12px;
+  }
+
+  .hero {
+    min-height: 82svh;
+    background-position: 58% center;
+  }
+
+  .hero-content {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .hero-copy {
+    max-width: 560px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight {
+    border-right: 0;
+    border-bottom: 1px solid #ffffff25;
+    padding: 17px;
+  }
+
+  .service-grid,
+  .doctor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid,
+  .appointment-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-visual {
+    min-height: 310px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links .button {
+    width: 100%;
+  }
+
+  .hero {
+    min-height: 80svh;
+    background-position: 60% center;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  section.content-section {
+    padding: 57px 0;
+  }
+
+  .service-grid,
+  .doctor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-card img {
+    height: 310px;
+  }
+
+  .form-card {
+    padding: 21px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="demo">
-  PORTFOLIO DEMO · FICTIONAL CLINIC · NOT A REAL HOSPITAL
+<div class="demo-banner">
+  HEALTHCARE WEBSITE PORTFOLIO DEMO · FICTIONAL CLINIC
 </div>
 
 <header>
   <nav class="container">
-    <a class="logo" href="#home">✚ Care<span>Point</span></a>
-    <div class="links">
+    <a href="#home" class="logo">
+      <span class="logo-icon">✚</span>Care<span>Point</span>
+    </a>
+
+    <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a href="#doctors">Doctors</a>
-      <a class="btn" href="#contact">Book Appointment</a>
+      <a href="#doctors">Our Team</a>
+      <a href="#contact" class="button">Book Appointment ↗</a>
     </div>
   </nav>
 </header>
 
 <main>
+
+<!-- FULL SCREEN HOMEPAGE BACKGROUND -->
+
 <section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Care that puts you first</div>
-      <h1>Your Health.<br><span>Our Priority.</span></h1>
-      <p>
-        Discover a welcoming healthcare experience with clear
-        information, compassionate care and convenient appointment
-        enquiries.
+  <div class="hero-content">
+    <div class="hero-copy">
+      <div class="eyebrow">Compassionate Care · Better Tomorrow</div>
+
+      <h1>
+        Your Health.<br>
+        <span>Our Priority.</span>
+      </h1>
+
+      <p class="hero-description">
+        A welcoming healthcare experience built around compassion,
+        clear communication and patient-focused service.
+        Explore our sample clinic website and discover a better
+        digital healthcare experience.
       </p>
+
       <div class="hero-actions">
-        <a class="btn" href="#contact">Request Appointment →</a>
-        <a class="btn btn-light" href="#services">Our Services</a>
+        <a href="#contact" class="button">
+          Request an Appointment →
+        </a>
+
+        <a href="#services" class="button button-white">
+          Explore Our Services
+        </a>
       </div>
-      <p>♡ Patient-focused approach · Clear communication</p>
-    </div>
-    <div>
-      <img
-        src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=85"
-        alt="Healthcare professional in a clinical setting">
+
+      <p class="hero-note">
+        <span>✓</span> Friendly service
+        &nbsp;&nbsp; <span>✓</span> Patient-focused approach
+      </p>
     </div>
   </div>
 </section>
+
+<!-- HIGHLIGHTS -->
 
 <div class="highlights">
   <div class="container highlight-grid">
+
     <div class="highlight">
-      <strong>◷ Convenient Hours</strong>
-      <small>Sample hours: Monday–Saturday</small>
+      <strong>♡ Compassionate Care</strong>
+      <p>A welcoming patient experience</p>
     </div>
+
     <div class="highlight">
-      <strong>♡ Patient-Focused</strong>
-      <small>A welcoming experience</small>
+      <strong>◷ Convenient Enquiries</strong>
+      <p>A simple appointment enquiry layout</p>
     </div>
+
     <div class="highlight">
-      <strong>⌖ Easy to Reach</strong>
-      <small>Add the client's verified address</small>
+      <strong>✚ Healthcare Information</strong>
+      <p>Clear service information for visitors</p>
     </div>
+
   </div>
 </div>
 
-<section class="services" id="services">
+<!-- SERVICES -->
+
+<section class="content-section services" id="services">
   <div class="container">
-    <div class="section-title">
+
+    <div class="section-heading">
       <div class="eyebrow">Our Services</div>
       <h2>Healthcare Made Easier</h2>
-      <p>Sample service sections for a clinic website.
-      Actual services must be verified before launch.</p>
+      <p>
+        Explore the sample healthcare service sections.
+        Actual services should be confirmed by the clinic before launch.
+      </p>
     </div>
 
     <div class="service-grid">
-      <article class="card">
+
+      <article class="service-card">
         <div class="service-icon">🩺</div>
         <h3>General Consultation</h3>
-        <p>Example section for general health consultations.</p>
-        <a class="btn btn-light" href="#contact">Enquire →</a>
+        <p>
+          A sample section for general consultations and
+          everyday healthcare enquiries.
+        </p>
+        <a href="#contact" class="button button-white">Enquire →</a>
       </article>
-      <article class="card">
+
+      <article class="service-card">
         <div class="service-icon">♡</div>
         <h3>Heart Health</h3>
-        <p>Sample information area for cardiac consultations.</p>
-        <a class="btn btn-light" href="#contact">Enquire →</a>
+        <p>
+          A placeholder for cardiac consultation information,
+          if offered by the clinic.
+        </p>
+        <a href="#contact" class="button button-white">Enquire →</a>
       </article>
-      <article class="card">
+
+      <article class="service-card">
         <div class="service-icon">🧒</div>
         <h3>Child Healthcare</h3>
-        <p>Example section for child and family healthcare.</p>
-        <a class="btn btn-light" href="#contact">Enquire →</a>
+        <p>
+          An example service section for child and family
+          healthcare information.
+        </p>
+        <a href="#contact" class="button button-white">Enquire →</a>
       </article>
-      <article class="card">
+
+      <article class="service-card">
         <div class="service-icon">🧪</div>
         <h3>Diagnostics</h3>
-        <p>Placeholder for available tests and diagnostic services.</p>
-        <a class="btn btn-light" href="#contact">Enquire →</a>
+        <p>
+          A sample area for verified diagnostic tests
+          and available facilities.
+        </p>
+        <a href="#contact" class="button button-white">Enquire →</a>
       </article>
-      <article class="card">
+
+      <article class="service-card">
         <div class="service-icon">🌿</div>
         <h3>Women's Wellness</h3>
-        <p>Sample section for women's health services, if offered.</p>
-        <a class="btn btn-light" href="#contact">Enquire →</a>
+        <p>
+          An example section for women's healthcare
+          information and consultation enquiries.
+        </p>
+        <a href="#contact" class="button button-white">Enquire →</a>
       </article>
-      <article class="card">
+
+      <article class="service-card">
         <div class="service-icon">🦴</div>
         <h3>Bone & Joint Care</h3>
-        <p>Example section for orthopaedic consultations.</p>
-        <a class="btn btn-light" href="#contact">Enquire →</a>
+        <p>
+          A sample section for orthopaedic services
+          and consultation enquiries.
+        </p>
+        <a href="#contact" class="button button-white">Enquire →</a>
       </article>
+
     </div>
   </div>
 </section>
 
-<section class="about" id="about">
+<!-- ABOUT -->
+
+<section class="content-section about" id="about">
   <div class="container about-grid">
-    <img
-      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85"
-      alt="Healthcare professional talking to a patient">
-    <div>
-      <div class="eyebrow">About CarePoint</div>
-      <h2>A Clearer Healthcare Experience</h2>
-      <p>
-        CarePoint is a fictional clinic name created for a web design
-        portfolio. This concept demonstrates a clean, modern layout
-        that helps visitors explore services and find contact options.
-      </p>
-      <ul class="checks">
-        <li>Mobile-friendly website design</li>
-        <li>Clear service information</li>
-        <li>Simple appointment enquiry layout</li>
-        <li>Easy-to-update business details</li>
-      </ul>
-      <a class="btn" href="#contact">Contact Us →</a>
+
+    <div class="about-visual">
+      <p>Care that puts people first.</p>
     </div>
+
+    <div class="about-copy">
+      <div class="eyebrow">About CarePoint</div>
+
+      <h2>A Better Digital Healthcare Experience</h2>
+
+      <p>
+        CarePoint is a fictional clinic name created for this
+        web design portfolio. This concept demonstrates how a
+        modern clinic can present its services and contact
+        information through a clean, accessible website.
+      </p>
+
+      <ul class="check-list">
+        <li>Responsive website design</li>
+        <li>Easy-to-explore service information</li>
+        <li>Simple appointment enquiry interface</li>
+        <li>Clear contact information layout</li>
+      </ul>
+
+      <a href="#contact" class="button">Get in Touch →</a>
+    </div>
+
   </div>
 </section>
 
-<section class="doctors" id="doctors">
+<!-- DOCTORS -->
+
+<section class="content-section doctors" id="doctors">
   <div class="container">
-    <div class="section-title">
+
+    <div class="section-heading">
       <div class="eyebrow">Our Team</div>
       <h2>Meet Our Sample Team</h2>
-      <p>Fictional profile examples. Replace with verified doctor
-      names, qualifications and approved photographs before launch.</p>
+      <p>
+        These are illustrative sample profiles.
+        Replace them with verified professionals and approved
+        photographs before using this website for a real clinic.
+      </p>
     </div>
+
     <div class="doctor-grid">
-      <article class="doctor">
-        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80" alt="Sample doctor portrait">
+
+      <article class="doctor-card">
+        <img
+          src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=85"
+          alt="Sample healthcare professional"
+          loading="lazy">
+
         <div class="doctor-info">
           <h3>Dr. Alex Morgan</h3>
           <p>General Medicine · Sample Profile</p>
+          <span class="sample-label">DEMO PROFILE</span>
         </div>
       </article>
-      <article class="doctor">
-        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="Sample doctor portrait">
+
+      <article class="doctor-card">
+        <img
+          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=85"
+          alt="Sample healthcare professional"
+          loading="lazy">
+
         <div class="doctor-info">
           <h3>Dr. Maya Thomas</h3>
           <p>Family Health · Sample Profile</p>
+          <span class="sample-label">DEMO PROFILE</span>
         </div>
       </article>
-      <article class="doctor">
-        <img src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=800&q=80" alt="Sample doctor portrait">
+
+      <article class="doctor-card">
+        <img
+          src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=800&q=85"
+          alt="Sample healthcare professional"
+          loading="lazy">
+
         <div class="doctor-info">
           <h3>Dr. Daniel Lee</h3>
           <p>Consultant · Sample Profile</p>
+          <span class="sample-label">DEMO PROFILE</span>
         </div>
       </article>
+
     </div>
   </div>
 </section>
 
-<section class="appointment" id="contact">
+<!-- APPOINTMENT -->
+
+<section class="content-section appointment" id="contact">
   <div class="container appointment-grid">
-    <div>
-      <div class="eyebrow" style="color:#b9ddff">Get In Touch</div>
+
+    <div class="appointment-copy">
+      <div class="eyebrow">Get in Touch</div>
+
       <h2>Let's Make Your Next Step Simple.</h2>
+
       <p>
-        This demo shows how a clinic can collect appointment enquiries.
-        The form is not connected to a real booking system.
+        Use this sample form to preview the appointment enquiry
+        experience. It is not connected to a real booking system.
       </p>
-      <p>⌖ Address: Add verified clinic address</p>
-      <p>☎ Phone: Add verified phone number</p>
-      <p>◷ Sample hours: Monday–Saturday, 9 AM–7 PM</p>
+
+      <div class="contact-detail">
+        <p>⌖ Address: Add verified clinic address</p>
+        <p>☎ Phone: Add verified contact number</p>
+        <p>✉ Email: Add verified clinic email</p>
+        <p>◷ Hours: Add confirmed opening hours</p>
+      </div>
     </div>
 
     <div class="form-card">
       <h3>Request an Appointment</h3>
-      <p>Preview the sample enquiry form below.</p>
 
-      <form id="appointmentForm">
+      <p>
+        Complete the sample form to preview its appearance.
+      </p>
+
+      <form id="appointment-form">
+
         <div class="form-grid">
+
           <div class="field">
-            <label for="name">Full Name</label>
-            <input id="name" name="name" placeholder="Your name" required>
+            <label for="patient-name">Full Name</label>
+            <input
+              id="patient-name"
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              required>
           </div>
+
           <div class="field">
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel"
-              placeholder="Your phone number" required
-              pattern="[0-9+() -]{7,18}">
+            <label for="patient-phone">Phone Number</label>
+            <input
+              id="patient-phone"
+              name="phone"
+              type="tel"
+              placeholder="Enter phone number"
+              pattern="[0-9+() -]{7,18}"
+              required>
           </div>
+
           <div class="field">
-            <label for="service">Select Service</label>
-            <select id="service" name="service" required>
+            <label for="service-choice">Select Service</label>
+
+            <select id="service-choice" name="service" required>
               <option value="">Choose a service</option>
               <option>General Consultation</option>
               <option>Heart Health</option>
@@ -383,73 +1099,112 @@ footer h3{font-size:15px}
               <option>Other Enquiry</option>
             </select>
           </div>
+
           <div class="field">
-            <label for="date">Preferred Date</label>
-            <input id="date" name="date" type="date" required>
+            <label for="appointment-date">Preferred Date</label>
+            <input
+              id="appointment-date"
+              name="date"
+              type="date"
+              required>
           </div>
+
           <div class="field full">
-            <label for="message">Message (Optional)</label>
-            <textarea id="message" name="message"
-              placeholder="Brief enquiry only"></textarea>
+            <label for="patient-message">Message (Optional)</label>
+            <textarea
+              id="patient-message"
+              name="message"
+              placeholder="Enter a brief enquiry"></textarea>
           </div>
+
         </div>
-        <button class="btn" type="submit">Preview Request →</button>
-        <div id="result" role="status"></div>
-        <p class="notice">
-          Demo only. No appointment is booked and no information is
-          transmitted or saved. Do not enter sensitive medical details.
+
+        <button type="submit" class="button">
+          Preview Enquiry →
+        </button>
+
+        <div id="form-result" role="status"></div>
+
+        <p class="form-notice">
+          Portfolio demonstration only. No appointment is booked,
+          and no form data is sent or saved. Do not enter sensitive
+          medical information.
         </p>
+
       </form>
     </div>
+
   </div>
 </section>
+
 </main>
+
+<!-- FOOTER -->
 
 <footer>
   <div class="container">
+
     <div class="footer-grid">
-      <div>
-        <div class="logo" style="color:white">✚ CarePoint</div>
-        <p>A fictional clinic website concept created for a web
-        design portfolio.</p>
+
+      <div class="footer-brand">
+        <a href="#home" class="logo" style="color:white">
+          <span class="logo-icon">✚</span>CarePoint
+        </a>
+
+        <p>
+          A fictional healthcare website concept created
+          to demonstrate modern web design and development.
+        </p>
       </div>
-      <div>
+
+      <div class="footer-links">
         <h3>Quick Links</h3>
+        <p><a href="#home">Home</a></p>
         <p><a href="#services">Services</a></p>
         <p><a href="#about">About</a></p>
         <p><a href="#doctors">Our Team</a></p>
       </div>
+
       <div>
-        <h3>Contact</h3>
-        <p>Add verified client address</p>
-        <p>Add verified phone number</p>
-        <p>Add verified email address</p>
+        <h3>Contact Information</h3>
+        <p>Address: Sample placeholder</p>
+        <p>Phone: Sample placeholder</p>
+        <p>Email: Sample placeholder</p>
       </div>
+
     </div>
+
     <div class="copyright">
-      © <span id="year"></span> CarePoint Demo Website.
-      Fictional clinic · Portfolio use only.
+      © <span id="year"></span> CarePoint Website Demo.
+      Fictional clinic · Portfolio demonstration only.
     </div>
+
   </div>
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-const dateField = document.getElementById("date");
+const dateInput = document.getElementById("appointment-date");
+
 const today = new Date();
-dateField.min = new Date(
+const localToday = new Date(
   today.getTime() - today.getTimezoneOffset() * 60000
-).toISOString().slice(0,10);
+).toISOString().slice(0, 10);
 
-document.getElementById("appointmentForm").addEventListener(
+dateInput.min = localToday;
+
+document.getElementById("appointment-form").addEventListener(
   "submit",
   function(event) {
     event.preventDefault();
-    const result = document.getElementById("result");
+
+    const result = document.getElementById("form-result");
+
     result.style.display = "block";
     result.textContent =
-      "Demo preview only: the form works, but no appointment has been sent or booked.";
+      "This is a website demo. Your enquiry was not sent and no appointment was booked.";
   }
 );
 </script>
